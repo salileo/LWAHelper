@@ -1,0 +1,77 @@
+﻿<Window x:Class="LWAHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LWAHelper" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Menu>
+        </Menu>
+        <TabControl Grid.Row="1">
+            <TabItem Header="Client Log" Name="client_log">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <ComboBox Width="200" Height="25" Text="Filter" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+                            <ComboBoxItem>Filter</ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Verbose</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Info</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Warning</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Error</CheckBox>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Grid.Row ="1" Name="client_log_data"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Plugin Trace" Name="plugin_log">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <ComboBox Width="200" Height="25" Text="Filter" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
+                            <ComboBoxItem>Filter</ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Verbose</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Info</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Warning</CheckBox>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <CheckBox>Error</CheckBox>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row ="1" Margin="0,10,0,0" HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Visible">
+                        <TextBlock Name="plugin_log_data"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Network Trace" Name="network_log">
+                <Grid>
+                    <ListBox Name="network_log_data" Margin="0,10,0,0"></ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
